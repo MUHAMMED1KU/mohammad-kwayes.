@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>اسأل عن ثروتك</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    direction: rtl;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.box {
+    background: white;
+    width: 95%;
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #4CAF50;
+}
+
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #43a047;
+}
+
+.result {
+    margin-top: 15px;
+    background: #f0fff4;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.credit {
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+<div class="credit">✨ تم التصميم بواسطة <b>محمد كويس</b></div>
+
+<h2>💰 اسأل عن ثروتك</h2>
+
+<p>اكتب اسمك وشوف شو مخبّي لك المستقبل 😄</p>
+
+<input type="text" id="name" placeholder="اكتب الاسم الكامل">
+
+<button onclick="searchWealth()">ابحث</button>
+
+<div class="result" id="result"></div>
+
+</div>
+
+<script>
+function searchWealth() {
+    let name = document.getElementById("name").value.trim();
+    let result = "";
+
+    if (name === "") {
+        alert("رجاءً اكتب الاسم");
+        return;
+    }
+
+    switch (name) {
+        case "عدنان كويس":
+            result = "💎 عدنان كويس<br>ثروتك: <b>ثراء فاحش</b> 💰💰💰";
+            break;
+
+        case "طلال كويس":
+            result = "✈️ طلال كويس<br>تحب الأجواء والصرف،<br>ثروتك <b>متوسطة</b> بس بتعيش مرتاح 😎";
+            break;
+
+        case "مصطفى كويس":
+            result = "🏜️ مصطفى كويس<br>تحب الأراضي الصحراوية،<br>وتستثمر بالفضة والنحاس 🪙";
+            break;
+
+        case "هيثم كويس":
+            result = "📜 هيثم كويس<br>تمتلك <b>دبلو</b> وأرض جيدة 🌱";
+            break;
+
+        case "منال رستم":
+            result = "🥇 منال رستم<br>ثروتك: <b>كيلو ذهب كامل</b> ✨";
+            break;
+
+        case "محمد كويس":
+            result = "🚀 محمد كويس<br><b>المليونير القادم</b> لا شك 💵🔥";
+            break;
+
+        case "جودي كويس":
+            result = "💍 جودي كويس<br>تمتلكي طوق ذهب وحلق ✨<br>👀 طلال حاطط عينو عليهن";
+            break;
+
+        case "احمد كويس":
+        case "أحمد كويس":
+            result = "💨 أحمد كويس<br>تمتلك <b>بخاخات جيدة</b> وحالتك مستقرة 😄";
+            break;
+
+        default:
+            result = "🤔 الاسم غير موجود بالمنظومة<br>جرّب اسم من العيلة 😄";
+    }
+
+    document.getElementById("result").innerHTML = result;
+}
+</script>
+
+</body>
+</html>
